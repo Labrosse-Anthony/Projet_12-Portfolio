@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './Header.css';
 
+import logoImg from '../../assets/img/logo-labrosse-anthony.webp';
+import menuIcon from '../../assets/img/menu.svg';
+import themeIcon from '../../assets/img/radio_button.svg';
+
 const Header = () => {
-  // Cet état va me permettre de savoir si le menu burger mobile est ouvert ou fermé
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Fonction pour inverser l'état du menu (ouvert/fermé)
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -13,24 +15,15 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
-        {/* Le Logo */}
+        
+        {/* 1. LE LOGO */}
         <div className="header__logo">
-          <a href="#presentation">LA</a>
+          <a href="#presentation">
+            <img src={logoImg} alt="Logo Anthony Labrosse" className="logo-img" />
+          </a>
         </div>
 
-        {/* Le bouton Burger (visible uniquement sur mobile/tablette) */}
-        <button 
-          className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Menu de navigation"
-        >
-          <span className="burger-bar"></span>
-          <span className="burger-bar"></span>
-          <span className="burger-bar"></span>
-        </button>
-
-        {/* La Navigation */}
-        {/* Si isMenuOpen est vrai, on ajoute la classe 'header__nav--open' pour afficher le menu en mobile */}
+        {/* 2. LA NAVIGATION (Masquée sur mobile, centrée sur desktop) */}
         <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
           <ul className="header__nav-list">
             <li className="header__nav-item">
@@ -44,6 +37,26 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+
+        {/* 3. CONTENEUR ACTIONS (Thème + Burger) */}
+        <div className="header__actions">
+          
+          {/* Le bouton Dark/Light mode */}
+          <button className="header__theme-btn" aria-label="Changer le thème">
+            <img src={themeIcon} alt="Icône thème" className="theme-icon" />
+          </button>
+
+          {/* Le bouton Burger (Visible uniquement sur mobile) */}
+          <button 
+            className="header__burger"
+            onClick={toggleMenu}
+            aria-label="Menu de navigation"
+          >
+            <img src={menuIcon} alt="Ouvrir le menu" className="burger-icon" />
+          </button>
+
+        </div>
+
       </div>
     </header>
   );
