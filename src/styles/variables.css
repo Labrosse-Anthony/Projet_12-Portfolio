@@ -1,0 +1,16 @@
+:root {
+  /* --- Couleurs de fond --- */
+  --bg-color-dark: #0a0e17;
+
+  /* --- Couleurs de texte --- */
+  --text-white: #ffffff;
+  --text-light-grey: #B0B5BD;
+  --text-dark-grey: #606773;
+
+  /* --- Couleurs d'accentuation --- */
+  --primary-blue: #33476F;
+  --accent-blue: #1E87FF;
+
+  /* --- Bordures --- */
+  --border-color: #1f2937;
+}
