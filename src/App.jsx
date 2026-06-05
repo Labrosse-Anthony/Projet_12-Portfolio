@@ -1,42 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './components/Header/Header';
-import Hero from './src/components/Hero/Hero';
-import Skills from './src/components/Skills/Skills';
-import Projects from './src/components/Projects/Projects';
-import Footer from './src/components/Footer/Footer';
+import Hero from './components/Hero/Hero';
 
-import './styles/variables.css';
-import './styles/index.css';
+import "./styles/variables.css";
+import "./styles/index.css";
 
 function App() {
-  // Gestion basique du Dark/Light mode
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    // Ajouter une logique ici pour basculer une classe sur le <body>
-  };
-
   return (
-    <div className={`app-container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
-      <Header toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+    <div className="app-container">
+      <Header />
       
       <main>
-        {/* J'utilise des id sur les sections pour permettre l'ancrage du menu de navigation */}
-        <section id="presentation">
-          <Hero />
-        </section>
-
-        <section id="competences">
-          <Skills />
-        </section>
-
-        <section id="projets">
-          <Projects />
-        </section>
+        {/* Maintenant React sait quoi afficher ici ! */}
+        <Hero />
       </main>
-
-      <Footer />
     </div>
   );
 }
