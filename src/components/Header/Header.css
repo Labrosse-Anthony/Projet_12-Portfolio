@@ -1,0 +1,157 @@
+/* =========================================
+   1. VERSION MOBILE (Styles par défaut)
+   ========================================= */
+.header {
+  background-color: #0a0e17; 
+  padding: 0.5rem 0.5rem;
+  position: relative;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header__logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- BOUTONS ACTIONS --- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__menu-btn,
+.header__theme-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 100;
+}
+
+.menu-icon,
+.theme-icon {
+  width: 25px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(21%) saturate(1630%) hue-rotate(185deg) brightness(95%) contrast(87%);
+}
+
+/* --- MENU DE NAVIGATION --- */
+.header__nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #0a0e17;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 90;
+}
+
+.header__nav--open {
+  max-height: 300px;
+  opacity: 1;
+  padding: 2rem 0;
+}
+
+.header__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.header__nav-item a:hover {
+  color: var(--primary-blue); 
+}
+
+/* =========================================
+   2. VERSION TABLETTE (Point de rupture 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
+  .menu-icon,
+  .theme-icon {
+    width: 28px;
+  }
+}
+
+/* =========================================
+   3. VERSION DESKTOP (Point de rupture 1280px)
+   ========================================= */
+@media (min-width: 1280px) {
+  
+  .header {
+    padding: 1rem 3rem;
+  }
+
+  .logo-img {
+    height: 60px;
+  }
+
+  .header__menu-btn {
+    display: none;
+  }
+
+  .header__nav {
+    position: static;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 3rem;
+  }
+
+  .header__nav-list {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}

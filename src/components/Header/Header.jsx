@@ -18,9 +18,7 @@ const Header = () => {
         
         {/* 1. LE LOGO */}
         <div className="header__logo">
-          <a href="#presentation">
             <img src={logoImg} alt="Logo Anthony Labrosse" className="logo-img" />
-          </a>
         </div>
 
         {/* 2. LA NAVIGATION (Masquée sur mobile, centrée sur desktop) */}
@@ -38,7 +36,7 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* 3. CONTENEUR ACTIONS (Thème + Burger) */}
+        {/* 3. CONTENEUR ACTIONS (Thème + Menu) */}
         <div className="header__actions">
           
           {/* Le bouton Dark/Light mode */}
@@ -46,13 +44,13 @@ const Header = () => {
             <img src={themeIcon} alt="Icône thème" className="theme-icon" />
           </button>
 
-          {/* Le bouton Burger (Visible uniquement sur mobile) */}
+          {/* Le bouton Menu (Visible uniquement sur mobile) */}
           <button 
-            className="header__burger"
+            className="header__menu-btn"
             onClick={toggleMenu}
             aria-label="Menu de navigation"
           >
-            <img src={menuIcon} alt="Ouvrir le menu" className="burger-icon" />
+            <img src={menuIcon} alt="Ouvrir le menu" className="menu-icon" />
           </button>
 
         </div>
