@@ -9,12 +9,12 @@ import './styles/variables.css';
 import './styles/index.css';
 
 function App() {
-  // Gestion basique du Dark/Light mode (même si ton design par défaut est dark)
+  // Gestion basique du Dark/Light mode
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-    // Tu pourras ajouter une logique ici pour basculer une classe sur le <body>
+    // Ajouter une logique ici pour basculer une classe sur le <body>
   };
 
   return (
