@@ -1,8 +1,10 @@
+@import url(../../styles/variables.css);
+
 /* =========================================
    1. VERSION MOBILE (Styles par défaut)
    ========================================= */
 .header {
-  background-color: #0a0e17; 
+  background-color: var(--bg-color-dark);
   padding: 0.5rem 0.5rem;
   position: relative;
 }
@@ -27,7 +29,6 @@
   object-fit: contain;
 }
 
-/* --- BOUTONS ACTIONS --- */
 .header__actions {
   display: flex;
   align-items: center;
@@ -59,7 +60,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #0a0e17;
+  background-color: var(--bg-color-dark);
   padding: 0;
   max-height: 0;
   overflow: hidden;
@@ -88,7 +89,7 @@
 }
 
 .header__nav-item a {
-  color: #ffffff;
+  color: var(--text-white);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
