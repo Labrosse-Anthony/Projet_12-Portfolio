@@ -17,7 +17,7 @@ const Hero = () => {
             />
           </div>
           <div className="hero__content">
-            <h1 className="hero__title">Bonjour, <br/> Je suis Labrosse Anthony.</h1>
+            <h1 className="hero__title">Bonjour, <br/> Je suis Anthony Labrosse.</h1>
             <h2 className="hero__subtitle">Intégrateur web</h2>
             <p className="hero__description">
               Passionné par le web ainsi que la programmation c'est pour cela que j'ai choisi de faire une reconversion professionnelle dans ce domaine.
