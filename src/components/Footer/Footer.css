@@ -1,0 +1,54 @@
+@import url(../../styles/variables.css);
+
+/* =========================================
+   1. CONTENEUR PRINCIPAL (Mobile First)
+   ========================================= */
+.footer {
+  background: linear-gradient(to top, var(--bg-color-dark, #0a0e17) 0%, var(--dark-blue, #0B1D3A) 100%); 
+  padding: 1rem 1rem 0.5rem 1rem;
+  text-align: center;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* =========================================
+   2. TYPOGRAPHIE
+   ========================================= */
+.footer__name {
+  color: var(--text-footer, #57585E);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.footer__title {
+  color: var(--texte-footer, #57585E);
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.footer__copyright {
+  color: var(--texte-footer, #57585E);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* =========================================
+   3. VERSION TABLETTE (Point de rupture 768px)
+   ========================================= */
+@media (min-width: 768px) {
+
+}
+
+/* =========================================
+   4. VERSION DESKTOP (Point de rupture 1280px)
+   ========================================= */
+@media (min-width: 1280px) {
+
+}
