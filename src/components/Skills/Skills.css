@@ -1,0 +1,104 @@
+@import url(../../styles/variables.css);
+
+/* =========================================
+   1. CONTENEUR PRINCIPAL (Mobile First)
+   ========================================= */
+.skills {
+  background-color: #020616;
+  padding: 1.5rem 1rem 2.5rem 1rem ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills__title {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   2. LA GRILLE DES BADGES
+   ========================================= */
+.skills__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 600px;
+}
+
+/* =========================================
+   3. DESIGN DES PILULES (Badges)
+   ========================================= */
+.skill-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0B1D3A;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px; 
+  gap: 0.8rem;
+  min-width: 160px;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.skill-name {
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   5. VERSION TABLETTE (Point de rupture 768px)
+   ========================================= */
+@media (min-width: 768px) {
+
+    .skills {
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  }
+
+  .skills__title {
+  margin-bottom: 3rem;
+  }
+
+  .skills__container { 
+  gap: 3rem;
+  max-width: 900px;
+  }
+
+  .skill-badge {
+    min-width: 170px;
+  }
+
+}
+
+/* =========================================
+   6. VERSION DESKTOP (Point de rupture 1280px)
+   ========================================= */
+@media (min-width: 1280px) {
+  
+  .skills {
+  padding: 2rem 1.5rem 5rem 1.5rem;
+  }
+
+  .skills__title {
+  margin-bottom: 4rem;
+  }
+
+ .skills__container { 
+    gap: 4rem;
+    max-width: 1000px;
+  }
+
+  .skill-badge {
+    min-width: 200px;
+  }
+}
