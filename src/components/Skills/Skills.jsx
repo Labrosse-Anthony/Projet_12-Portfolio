@@ -11,7 +11,7 @@ import githubIcon from '../../assets/img/logo-github.webp';
 const Skills = () => {
   return (
     <section className="skills" id="competences">
-      <h2 className="skills__title">Compétences</h2>
+      <h2 className="skills__title">COMPÉTENCES</h2>
       <div className="skills__container">
         <div className="skill-badge">
             <img src={htmlIcon} alt="HTML" className="skill-icon" />
