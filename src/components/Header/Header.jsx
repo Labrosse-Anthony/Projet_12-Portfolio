@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
 
-import logoImg from '../../assets/img/logo-labrosse-anthony.webp';
-import menuIcon from '../../assets/img/menu.svg';
-import themeIcon from '../../assets/img/radio_button.svg';
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,7 +14,7 @@ const Header = () => {
         
         {/* 1. LE LOGO */}
         <div className="header__logo">
-            <img src={logoImg} alt="Logo Anthony Labrosse" className="logo-img" />
+            <img src="/img/logo-labrosse-anthony.webp" alt="Logo Anthony Labrosse" className="logo-img" />
         </div>
 
         {/* 2. LA NAVIGATION (Masquée sur mobile, centrée sur desktop) */}
@@ -41,7 +37,7 @@ const Header = () => {
           
           {/* Le bouton Dark/Light mode */}
           <button className="header__theme-btn" aria-label="Changer le thème">
-            <img src={themeIcon} alt="Icône thème" className="theme-icon" />
+            <img src="/img/radio_button.svg" alt="Icône thème" className="theme-icon" />
           </button>
 
           {/* Le bouton Menu (Visible uniquement sur mobile) */}
@@ -50,7 +46,7 @@ const Header = () => {
             onClick={toggleMenu}
             aria-label="Menu de navigation"
           >
-            <img src={menuIcon} alt="Ouvrir le menu" className="menu-icon" />
+            <img src="/img/menu.svg" alt="Ouvrir le menu" className="menu-icon" />
           </button>
 
         </div>

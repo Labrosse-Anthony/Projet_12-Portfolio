@@ -1,8 +1,5 @@
 import React from 'react';
 import './Hero.css';
-import profileImg from '../../assets/img/photo-labrosse-anthony.webp'; 
-import githubIcon from '../../assets/img/logo-github.webp'; 
-import linkedinIcon from '../../assets/img/logo-linkedin.webp'; 
 
 const Hero = () => {
   return (
@@ -11,7 +8,7 @@ const Hero = () => {
         <div className="hero__top-row">
           <div className="hero__image-wrapper">
             <img 
-              src={profileImg} 
+              src="../public/img/photo-labrosse-anthony.webp" 
               alt="Portrait de Labrosse Anthony" 
               className="hero__profile-img" 
             />
@@ -24,10 +21,10 @@ const Hero = () => {
             </p>
             <div className="hero__socials">
               <a href="https://github.com/Labrosse-Anthony" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
-                <img src={githubIcon} alt="GitHub" className="social-icon" />
+                <img src="../public/img/logo-github.webp" alt="GitHub" className="social-icon" />
               </a>
               <a href="https://www.linkedin.com/in/antonyla/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
-                <img src={linkedinIcon} alt="LinkedIn" className="social-icon" />
+                <img src="../public/img/logo-linkedin.webp" alt="LinkedIn" className="social-icon" />
               </a>
             </div>
             

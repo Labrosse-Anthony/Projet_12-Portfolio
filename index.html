@@ -1,18 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/webp" href="./src/assets/img/logo-labrosse-anthony.webp" />
+  
+  <link rel="icon" type="image/webp" href="../public/img/logo-labrosse-anthony.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Anthony Labrosse</title>
+  <title>Portfolio Anthony Labrosse | Intégrateur Web</title>
   <meta name="description" content="Portfolio d'Anthony Labrosse, intégrateur web passionné par la programmation. Découvrez mes projets et compétences." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Anthony Labrosse" />
 
-  <!-- Meta / Facebook / LinkedIn (Open Graph) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ton-nom-de-domaine.fr/" />
   <meta property="og:title" content="Portfolio Anthony Labrosse - Intégrateur Web" />
   <meta property="og:description" content="Découvrez mes projets web, mes compétences et mon parcours de reconversion professionnelle." />
-  <meta property="og:image" content="https://ton-nom-de-domaine.fr/image-apercu.jpg" />
+  <meta property="og:image" content="" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://ton-nom-de-domaine.fr/" />
   <meta name="twitter:title" content="Portfolio Anthony Labrosse - Intégrateur Web" />
@@ -21,16 +24,22 @@
 
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Anthony Labrosse",
-  "jobTitle": "Développeur Web / Intégrateur Web",
-  "url": "nom-de-domaine",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "Drôme",
-    "addressCountry": "FR"
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anthony Labrosse",
+    "jobTitle": "Développeur Web / Intégrateur Web",
+    "url": "https://ton-nom-de-domaine.fr/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Drôme",
+      "addressCountry": "FR"
     }
   }
   </script>
 </head>
+<body>
+  <div id="root"></div>
+  
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
