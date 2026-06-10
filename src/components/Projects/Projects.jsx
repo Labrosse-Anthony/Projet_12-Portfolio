@@ -1,32 +1,6 @@
 import React, { useState } from 'react';
+import projectsData from '../../data/Projects.json';
 import './Projects.css';
-import printItImage from '../../assets/img/img-print-it.webp';
-import ohMyFoodImage from '../../assets/img/img-ohmyfood.webp';
-import ninaCarducciImage from '../../assets/img/img-nina-carducci.webp';
-
-const projectsData = [
-  {
-    id: 1,
-    title: "Print It !",
-    description: "Un site de e-commerce pour l'impression. Catalogue de produit et commande en ligne.",
-    image: printItImage,
-    link: "https://labrosse-anthony.github.io/Projet_5-Print_it/"
-  },
-  {
-    id: 2,
-    title: "OhMyFood",
-    description: "Réservation de menus en ligne avec animations CSS.",
-    image: ohMyFoodImage,
-    link: "https://labrosse-anthony.github.io/Projet_4-Oh_My_Food/"
-  },
-  {
-    id: 3,
-    title: "Nina Carducci",
-    description: "Portfolio de la styliste Nina Carducci.",
-    image: ninaCarducciImage,
-    link: "https://labrosse-anthony.github.io/Projet_8-Nina_Carducci/"
-  },
-];
 
 // EXPLICATION DE LA CONSTANTE extendedProjects :
 // Au lieu d'un seul clone, on ajoute DEUX clones au début et DEUX clones à la fin.
@@ -48,11 +22,9 @@ const Projects = () => {
   
   // currentIndex : Garde en mémoire notre position sur le rail.
   // On commence maintenant à l'index "2", car c'est la position de notre VRAI projet "Print It".
-  // (Les index 0 et 1 sont occupés par nos clones !).
   const [currentIndex, setCurrentIndex] = useState(2);
   
   // isTransitioning : Un interrupteur (vrai/faux) qui active ou désactive l'animation de glissement.
-  // On le désactive uniquement pendant la fraction de seconde où l'on se "téléporte".
   const [isTransitioning, setIsTransitioning] = useState(true);
 
   const toggleDetails = (id) => {
