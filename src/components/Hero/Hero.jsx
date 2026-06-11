@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero__top-row">
           <div className="hero__image-wrapper">
             <img 
-              src="../public/img/photo-labrosse-anthony.webp" 
+              src="/img/photo-labrosse-anthony.webp" 
               alt="Portrait de Labrosse Anthony" 
               className="hero__profile-img" 
             />
@@ -21,10 +21,10 @@ const Hero = () => {
             </p>
             <div className="hero__socials">
               <a href="https://github.com/Labrosse-Anthony" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
-                <img src="../public/img/logo-github.webp" alt="GitHub" className="social-icon" />
+                <img src="/img/logo-github.webp" alt="GitHub" className="social-icon" />
               </a>
               <a href="https://www.linkedin.com/in/antonyla/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
-                <img src="../public/img/logo-linkedin.webp" alt="LinkedIn" className="social-icon" />
+                <img src="/img/logo-linkedin.webp" alt="LinkedIn" className="social-icon" />
               </a>
             </div>
             

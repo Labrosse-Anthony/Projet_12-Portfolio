@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Header.css';
 
-const Header = () => {
+// 🔌 On récupère la fonction toggleTheme envoyée par App.jsx
+const Header = ({ toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -36,7 +37,12 @@ const Header = () => {
         <div className="header__actions">
           
           {/* Le bouton Dark/Light mode */}
-          <button className="header__theme-btn" aria-label="Changer le thème">
+          {/* 🖱️ On attache l'événement onClick pour déclencher le changement de thème */}
+          <button 
+            className="header__theme-btn" 
+            onClick={toggleTheme} 
+            aria-label="Changer le thème"
+          >
             <img src="/img/radio_button.svg" alt="Icône thème" className="theme-icon" />
           </button>
 

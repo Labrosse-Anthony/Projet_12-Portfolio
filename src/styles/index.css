@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght=200..700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,11 +7,19 @@
 }
 
 body {
-  background-color: var(--bg-color-dark);
-  color: var(--text-white);
   font-family: 'Oswald', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  /* On définit un fond sombre par défaut sur le body pour éliminer le fond blanc d'origine du navigateur */
+  background-color: #020616; 
+}
+
+/* On applique le thème adaptatif sur .app car c'est cet élément qui porte les classes dark-mode et light-mode */
+.app {
+  background-color: var(--site-bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {

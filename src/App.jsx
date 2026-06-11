@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-import Skills from './components/Skills/Skills.jsx';
-import Projects from './components/Projects/Projects.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Projects from './components/Projects/Projects';
+import Skills from './components/Skills/Skills';
+import Footer from './components/Footer/Footer';
 import "./styles/variables.css";
-import "./styles/index.css";
+import './styles/index.css';
 
 function App() {
+  // 'dark' pour définir le thème par défaut
+  const [theme, setTheme] = useState('dark');
+
+  // 🔄 Fonction pour basculer d'un thème à l'autre
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
-    <div className="app-container">
-      <Header />
-      <main>
-        <Hero />
-        <Skills />
-        <Projects />
-      </main>
+    // 🏷️ La classe CSS change dynamiquement selon l'état du thème
+    <div className={`app ${theme}-mode`}>
+      {/* On transmet la fonction toggleTheme au Header pour qu'il la donne au logo */}
+      <Header toggleTheme={toggleTheme} />
+      <Hero />
+      <Skills />
+      <Projects />
       <Footer />
     </div>
   );

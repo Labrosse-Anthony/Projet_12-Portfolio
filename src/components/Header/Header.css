@@ -1,12 +1,13 @@
 @import url(../../styles/variables.css);
 
 /* =========================================
-   1. VERSION MOBILE (Styles par défaut)
+   1. VERSION MOBILE (Mobile First)
    ========================================= */
 .header {
-  background-color: var(--bg-color-dark);
+  background-color: var(--site-bg-header-footer);
   padding: 0.5rem 0.5rem;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .header__container {
@@ -51,20 +52,19 @@
 .theme-icon {
   width: 25px;
   height: auto;
-  filter: brightness(0) saturate(100%) invert(25%) sepia(21%) saturate(1630%) hue-rotate(185deg) brightness(95%) contrast(87%);
+  filter: brightness(0) saturate(100%) invert(44%) sepia(69%) saturate(3015%) hue-rotate(195deg) brightness(102%) contrast(106%);
 }
 
-/* --- MENU DE NAVIGATION --- */
+/* --- MENU NAVIGATION --- */
 .header__nav {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--bg-color-dark);
-  padding: 0;
+  background-color: rgba(11, 29, 58, 0.95); 
   max-height: 0;
-  overflow: hidden;
   opacity: 0;
+  overflow: hidden;
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,6 @@
    2. VERSION TABLETTE (Point de rupture 768px)
    ========================================= */
 @media (min-width: 768px) {
-  
   .header {
     padding: 1rem 2rem;
   }
@@ -123,15 +122,6 @@
    3. VERSION DESKTOP (Point de rupture 1280px)
    ========================================= */
 @media (min-width: 1280px) {
-  
-  .header {
-    padding: 1rem 3rem;
-  }
-
-  .logo-img {
-    height: 60px;
-  }
-
   .header__menu-btn {
     display: none;
   }
@@ -140,19 +130,26 @@
     position: static;
     max-height: none;
     opacity: 1;
-    overflow: visible;
     background-color: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
     padding: 0;
-    width: auto;
-    border: none;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 3rem;
+    flex: 1;
+    padding-right: 3rem;
   }
 
   .header__nav-list {
     flex-direction: row;
     gap: 3rem;
+  }
+
+  .header__nav-item a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .header__nav-item a:hover {
+    color: var(--accent-blue);
   }
 }

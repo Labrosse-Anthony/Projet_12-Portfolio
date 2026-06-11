@@ -1,19 +1,57 @@
+/* ==========================================================================
+   1. VARIABLES DE THÈME (Changent dynamiquement selon le mode sélectionné)
+   ========================================================================== */
+
+/* Mode sombre par défaut (activé via la classe .dark-mode sur l'application) */
+.app.dark-mode {
+  --site-bg-main: #020616;
+  --site-bg-gradient-end: #0B1D3A;
+  --site-bg-header-footer: #000000;
+  
+  --text-primary: #FFFFFF;
+  --text-body: #B0B5BD;
+  --text-muted: #606773;
+  
+  --card-highlight: #1E87FF;
+  --card-bg-inactive: #0B1D3A;
+  --modal-bg: #FFFFFF;
+  --modal-text-title: #0B1D3A;
+  --modal-text-body: #606773;
+  --modal-project: #1E87FF;
+  --modal-project-details: #FFFFFF;
+
+  --badge-bg: #0B1D3A
+}
+
+/* ☀️ Mode clair (activé via la classe .light-mode sur l'application) */
+.app.light-mode {
+  --site-bg-main: #FFFFFF;
+  --site-bg-gradient-end: #1E87FF;
+  --site-bg-header-footer: #f7fafc;
+  
+  --text-primary: #0B1D3A;
+  --text-body: #33476F;
+  --text-muted: #57585E;
+  
+  --card-highlight: #1E87FF;
+  --card-bg-inactive: #e2e8f0;
+  --modal-bg: #0B1D3A;
+  --modal-text-title: #FFFFFF;
+  --modal-text-body: #B0B5BD;
+  --modal-project: #1E87FF;
+  --modal-project-details: #FFFFFF;
+
+  --badge-bg: #1E87FF;
+}
+
+/* ==========================================================================
+   2. PALETTE DE COULEURS FIXES (Variables globales qui ne changent jamais)
+   ========================================================================== */
 :root {
-  /* --- Couleurs de fond --- */
-  --bg-color-dark: #000000;
-  --bg-color-black-light: #020616;
-
-  /* --- Couleurs de texte --- */
-  --text-white: #ffffff;
-  --text-light-grey: #B0B5BD;
-  --text-dark-grey: #606773;
-  --texte-footer: #57585E;
-
-  /* --- Couleurs d'accentuation --- */
   --primary-blue: #33476F;
   --accent-blue: #1E87FF;
   --dark-blue: #0B1D3A;
-
-  /* --- Bordures --- */
   --border-color: #1f2937;
+  --text-white: #FFFFFF;
+  --bg-color-black: #020616;
 }

@@ -4,9 +4,11 @@
    1. CONTENEUR PRINCIPAL (Mobile First)
    ========================================= */
 .footer {
-  background: linear-gradient(to top, var(--bg-color-dark, #0a0e17) 0%, var(--dark-blue, #0B1D3A) 100%); 
+  /* Le dégradé utilise nos variables pour passer d'une ambiance sombre à claire */
+  background: var(--site-bg-header-footer);
   padding: 1rem 1rem 0.5rem 1rem;
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 .footer__container {
@@ -20,23 +22,29 @@
    2. TYPOGRAPHIE
    ========================================= */
 .footer__name {
-  color: var(--text-footer, #57585E);
+  /* La couleur du nom s'adapte au thème actif */
+  color: var(--text-primary);
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 .footer__title {
-  color: var(--texte-footer, #57585E);
+  /* La couleur du titre s'ajuste selon le mode */
+  color: var(--text-body);
   font-size: 1rem;
   margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
 }
 
 .footer__copyright {
-  color: var(--texte-footer, #57585E);
+  /* La couleur du copyright devient plus lisible en mode clair */
+  color: var(--text-muted);
   font-size: 0.85rem;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 /* =========================================
