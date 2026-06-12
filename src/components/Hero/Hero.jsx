@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero__top-row">
           <div className="hero__image-wrapper">
             <img 
-              src="/img/photo-labrosse-anthony.webp" 
+              src="./img/photo-labrosse-anthony.webp" 
               alt="Portrait de Labrosse Anthony" 
               className="hero__profile-img" 
             />

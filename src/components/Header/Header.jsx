@@ -43,7 +43,7 @@ const Header = ({ toggleTheme }) => {
             onClick={toggleTheme} 
             aria-label="Changer le thème"
           >
-            <img src="/img/radio_button.svg" alt="Icône thème" className="theme-icon" />
+            <img src="./img/radio_button.svg" alt="Icône thème" className="theme-icon" />
           </button>
 
           {/* Le bouton Menu (Visible uniquement sur mobile) */}
