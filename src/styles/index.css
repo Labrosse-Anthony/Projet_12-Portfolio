@@ -13,6 +13,14 @@ body {
   background-color: #020616; 
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-color: #020616;
+}
+
 /* On applique le thème adaptatif sur .app car c'est cet élément qui porte les classes dark-mode et light-mode */
 .app {
   background-color: var(--site-bg-main);

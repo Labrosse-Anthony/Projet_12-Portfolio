@@ -14,8 +14,10 @@
 }
 
 .skills__title {
+  font-family: 'Roboto Slab', serif;
   font-size: 2.2rem;
-  /* MODIFICATION : Le titre s'adapte pour rester visible sur fond clair */
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--text-primary);
   transition: color 0.3s ease;
   margin-bottom: 2.5rem;
@@ -54,9 +56,11 @@
 }
 
 .skill-name {
+  font-family: 'Poppins', sans-serif;
   color: var(--text-white);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
+  line-height: 1.4;
   letter-spacing: 0.5px;
 }
 
