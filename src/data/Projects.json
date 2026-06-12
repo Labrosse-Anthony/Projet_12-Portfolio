@@ -4,20 +4,20 @@
     "title": "Print It !",
     "description": "Un site de e-commerce pour l'impression. Catalogue de produit et commande en ligne.",
     "image": "./img/img-print-it.webp",
-    "link": "https://labrosse-anthony.github.io/Projet_5-Print_it/"
+    "link": "https://github.com/Labrosse-Anthony/Projet_5-Print_it"
   },
   {
     "id": 2,
     "title": "OhMyFood",
     "description": "Réservation de menus en ligne avec animations CSS.",
     "image": "./img/img-ohmyfood.webp",
-    "link": "https://labrosse-anthony.github.io/Projet_4-Oh_My_Food/"
+    "link": "https://github.com/Labrosse-Anthony/Projet_4-Oh_My_Food"
   },
   {
     "id": 3,
     "title": "Nina Carducci",
     "description": "Portfolio de la styliste Nina Carducci.",
     "image": "./img/img-nina-carducci.webp",
-    "link": "https://labrosse-anthony.github.io/Projet_8-Nina_Carducci/"
+    "link": "https://github.com/Labrosse-Anthony/Projet_8-Nina_Carducci"
   }
 ]

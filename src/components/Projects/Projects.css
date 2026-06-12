@@ -129,13 +129,23 @@
   margin: 0;
 }
 
-.project-card__details-btn {
-  background: none;
-  border: none;
-  color: var(--text-white);
-  cursor: pointer;
-  font-size: 1rem;
-  text-decoration: underline;
+.project-card__github-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.project-card__github-link:hover {
+  transform: scale(1.1);
+}
+
+.github-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 /* =========================================
@@ -146,6 +156,7 @@
   border-radius: 12px;
   overflow: hidden;
   background-color: transparent; 
+  cursor: pointer;
 }
 
 .project-card__image-wrapper img {

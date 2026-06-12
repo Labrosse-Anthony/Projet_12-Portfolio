@@ -85,25 +85,35 @@ const Projects = () => {
               >
                 <div className="project-card__header">
                   <h3 className="project-card__title">{project.title}</h3>
-                  <button 
-                    className="project-card__details-btn"
-                    onClick={() => toggleDetails(project.id)}
+  
+                  {/* Le logo GitHub qui renvoie vers le code */}
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-card__github-link"
+                    aria-label="Voir le code sur GitHub"
                   >
-                    {openDetailsId === project.id ? "Fermer" : "Details"}
-                  </button>
+                    <img src="./img/logo-github.webp" alt="GitHub" className="github-icon" />
+                  </a>
                 </div>
 
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-card__image-link">
+                {/* L'image devient le bouton pour ouvrir les détails */}
+                <div 
+                  className="project-card__image-link" 
+                  onClick={() => toggleDetails(project.id)}
+                  role="button"
+                  tabIndex={0}
+                >
                   <div className="project-card__image-wrapper">
                     <img src={project.image} alt={`Aperçu du projet ${project.title}`} />
                   </div>
-                </a>
+                </div>
 
                 <div className={`project-card__details-modal ${openDetailsId === project.id ? 'is-open' : ''}`}>
                   <h4 className="modal-title">{project.title}</h4>
                   <p className="modal-text">{project.description}</p>
                 </div>
-
               </div>
             ))}
           </div>
