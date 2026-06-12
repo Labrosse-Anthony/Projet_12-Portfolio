@@ -85,8 +85,8 @@ const Projects = () => {
               >
                 <div className="project-card__header">
                   <h3 className="project-card__title">{project.title}</h3>
-  
-                  {/* Le logo GitHub qui renvoie vers le code */}
+                  
+                  {/* Le lien GitHub */}
                   <a 
                     href={project.link} 
                     target="_blank" 
@@ -98,7 +98,7 @@ const Projects = () => {
                   </a>
                 </div>
 
-                {/* L'image devient le bouton pour ouvrir les détails */}
+                {/* L'image cliquable pour ouvrir la modale */}
                 <div 
                   className="project-card__image-link" 
                   onClick={() => toggleDetails(project.id)}
@@ -114,6 +114,7 @@ const Projects = () => {
                   <h4 className="modal-title">{project.title}</h4>
                   <p className="modal-text">{project.description}</p>
                 </div>
+
               </div>
             ))}
           </div>
@@ -122,6 +123,28 @@ const Projects = () => {
         <button className="carousel-arrow arrow-right" onClick={nextSlide} aria-label="Projet suivant">
           &#10095;
         </button>
+      </div>
+
+      {/* NOUVEAU : LES POINTS DE NAVIGATION (Dots) */}
+      <div className="projects__dots">
+        {projectsData.map((_, index) => {
+          // Astuce : On calcule l'index réel du projet actif (en gérant les clones)
+          const activeDotIndex = (currentIndex - 2 + projectsData.length) % projectsData.length;
+          
+          return (
+            <button 
+              key={index} 
+              className={`dot ${activeDotIndex === index ? 'is-active' : ''}`}
+              // Bonus : rendre les points cliquables pour sauter directement au projet !
+              onClick={() => {
+                setIsTransitioning(true);
+                setCurrentIndex(index + 2); // +2 car les vrais projets commencent à l'index 2
+                setOpenDetailsId(null);
+              }}
+              aria-label={`Aller au projet ${index + 1}`}
+            ></button>
+          );
+        })}
       </div>
     </section>
   );
