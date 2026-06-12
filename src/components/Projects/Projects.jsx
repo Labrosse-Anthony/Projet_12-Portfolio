@@ -64,7 +64,11 @@ const Projects = () => {
       <h2 className="projects__title">PROJETS</h2>
 
       <div className="projects__carousel-wrapper">
-        <button className="carousel-arrow arrow-left" onClick={prevSlide} aria-label="Projet précédent">
+        <button 
+          className="carousel-arrow arrow-left" 
+          onClick={prevSlide} 
+          aria-label="Projet précédent"
+        >
           &#10094;
         </button>
 
@@ -94,7 +98,11 @@ const Projects = () => {
                     className="project-card__github-link"
                     aria-label="Voir le code sur GitHub"
                   >
-                    <img src="./img/logo-github.webp" alt="GitHub" className="github-icon" />
+                    <img 
+                      src="./img/logo-github.webp" 
+                      alt="GitHub" 
+                      className="github-icon" 
+                    />
                   </a>
                 </div>
 
@@ -106,11 +114,25 @@ const Projects = () => {
                   tabIndex={0}
                 >
                   <div className="project-card__image-wrapper">
-                    <img src={project.image} alt={`Aperçu du projet ${project.title}`} />
+                    <img 
+                      src={project.image} 
+                      alt={`Aperçu du projet ${project.title}`} 
+                    />
                   </div>
                 </div>
 
+                {/* Modale des détails */}
                 <div className={`project-card__details-modal ${openDetailsId === project.id ? 'is-open' : ''}`}>
+                  
+                  {/* Le bouton pour fermer la modale */}
+                  <button 
+                    className="modal-close-btn" 
+                    onClick={() => setOpenDetailsId(null)}
+                    aria-label="Fermer les détails"
+                  >
+                    &times;
+                  </button>
+
                   <h4 className="modal-title">{project.title}</h4>
                   <p className="modal-text">{project.description}</p>
                 </div>
@@ -120,22 +142,26 @@ const Projects = () => {
           </div>
         </div>
 
-        <button className="carousel-arrow arrow-right" onClick={nextSlide} aria-label="Projet suivant">
+        <button 
+          className="carousel-arrow arrow-right" 
+          onClick={nextSlide} 
+          aria-label="Projet suivant"
+        >
           &#10095;
         </button>
       </div>
 
-      {/* NOUVEAU : LES POINTS DE NAVIGATION (Dots) */}
+      {/* LES POINTS DE NAVIGATION (Dots) */}
       <div className="projects__dots">
         {projectsData.map((_, index) => {
-          // Astuce : On calcule l'index réel du projet actif (en gérant les clones)
+          // On calcule l'index réel du projet actif (en gérant les clones)
           const activeDotIndex = (currentIndex - 2 + projectsData.length) % projectsData.length;
           
           return (
             <button 
               key={index} 
               className={`dot ${activeDotIndex === index ? 'is-active' : ''}`}
-              // Bonus : rendre les points cliquables pour sauter directement au projet !
+              // Rendre les points cliquables pour sauter directement au projet !
               onClick={() => {
                 setIsTransitioning(true);
                 setCurrentIndex(index + 2); // +2 car les vrais projets commencent à l'index 2
