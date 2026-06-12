@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Header.css';
 
+
 // 🔌 On récupère la fonction toggleTheme envoyée par App.jsx
 const Header = ({ toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +53,11 @@ const Header = ({ toggleTheme }) => {
             onClick={toggleMenu}
             aria-label="Menu de navigation"
           >
-            <img src="./img/menu.svg" alt="Ouvrir le menu" className="menu-icon" />
+            <img 
+              src={isMenuOpen ? "./img/croix.webp" : "./img/menu.webp"} 
+              alt={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"} 
+              className={`menu-icon ${isMenuOpen ? 'icon-cross' : ''}`}
+            />
           </button>
 
         </div>

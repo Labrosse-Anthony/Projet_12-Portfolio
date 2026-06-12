@@ -51,8 +51,14 @@
 .menu-icon,
 .theme-icon {
   width: 25px;
-  height: auto;
+  height: 25px;
+  object-fit: contain;
   filter: brightness(0) saturate(100%) invert(44%) sepia(69%) saturate(3015%) hue-rotate(195deg) brightness(102%) contrast(106%);
+  transition: transform 0.3S ease-in-out, opacity 0.2s ease;
+}
+
+.icon-cross {
+  padding: 4px;
 }
 
 /* --- MENU NAVIGATION --- */
@@ -61,11 +67,12 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: rgba(11, 29, 58, 0.95); 
+  background-color: var(--card-bg-menu);
   max-height: 0;
   opacity: 0;
+  visibility: hidden;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: max-height 0.4s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +82,9 @@
 .header__nav--open {
   max-height: 300px;
   opacity: 1;
+  visibility: visible;
   padding: 2rem 0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0,5);
 }
 
 .header__nav-list {
@@ -140,6 +149,7 @@
     position: static;
     max-height: none;
     opacity: 1;
+    visibility: visible;
     background-color: transparent;
     flex-direction: row;
     justify-content: flex-end;
@@ -154,7 +164,7 @@
   }
 
   .header__nav-item a {
-    font-size: 1.7rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
     color: var(--text-primary);

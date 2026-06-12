@@ -19,11 +19,14 @@ const Hero = () => {
             <p className="hero__description">
               Passionné par le web ainsi que la programmation c'est pour cela que j'ai choisi de faire une reconversion professionnelle dans ce domaine.
             </p>
-            <div className="hero__socials">
-              <a href="https://github.com/Labrosse-Anthony" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
+            <div className="hero__socials-container">
+              <a href="mailto:labrosse.anthony.dev@gmail.com" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Me contacter">
+                <img src="./img/email.webp" alt="Email" className="social-icon" />
+              </a>
+              <a href="https://github.com/Labrosse-Anthony" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
                 <img src="./img/logo-github.webp" alt="GitHub" className="social-icon" />
               </a>
-              <a href="https://www.linkedin.com/in/antonyla/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
+              <a href="https://www.linkedin.com/in/antonyla/" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
                 <img src="./img/logo-linkedin.webp" alt="LinkedIn" className="social-icon" />
               </a>
             </div>
