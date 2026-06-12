@@ -15,7 +15,7 @@ const Header = ({ toggleTheme }) => {
         
         {/* 1. LE LOGO */}
         <div className="header__logo">
-            <img src="/img/logo-labrosse-anthony.webp" alt="Logo Anthony Labrosse" className="logo-img" />
+            <img src="./img/logo-labrosse-anthony.webp" alt="Logo Anthony Labrosse" className="logo-img" />
         </div>
 
         {/* 2. LA NAVIGATION (Masquée sur mobile, centrée sur desktop) */}
@@ -52,7 +52,7 @@ const Header = ({ toggleTheme }) => {
             onClick={toggleMenu}
             aria-label="Menu de navigation"
           >
-            <img src="/img/menu.svg" alt="Ouvrir le menu" className="menu-icon" />
+            <img src="./img/menu.svg" alt="Ouvrir le menu" className="menu-icon" />
           </button>
 
         </div>

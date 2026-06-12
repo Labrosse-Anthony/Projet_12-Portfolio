@@ -1,7 +1,7 @@
 @import url(../../styles/variables.css);
 
 /* =========================================
-   1. CONTENEUR PRINCIPAL
+   1. CONTENEUR PRINCIPAL (Mobile First)
    ========================================= */
 .projects {
   background: linear-gradient(to bottom, var(--site-bg-main) 0%, var(--site-bg-gradient-end) 100%);
@@ -176,13 +176,13 @@
 }
 
 .modal-title {
-  color: var(--text-primary);
+  color: var(--modal-text-title);
   margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
 }
 
 .modal-text {
-  color: var(--modal-text-body);
+  color: var(--modal-text-title);
   font-size: 0.95rem;
   line-height: 1.4;
   margin: 0;
@@ -198,7 +198,7 @@
 }
 
 /* =========================================
-   8. VERSION TABLETTE 768px
+   8. VERSION TABLETTE (Point de rupture 768px)
    ========================================= */
 @media (min-width: 768px) {
   .projects__carousel-wrapper {

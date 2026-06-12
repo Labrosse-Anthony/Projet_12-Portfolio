@@ -96,7 +96,16 @@
 }
 
 /* =========================================
-   5. VERSION TABLETTE (Point de rupture 768px)
+   5. VERSION 500px (Point de rupture 500px)
+   ========================================= */
+@media (min-width: 500px) {
+  .hero__top-row {
+    gap: 3rem;
+  }
+}
+
+/* =========================================
+   6. VERSION TABLETTE (Point de rupture 768px)
    ========================================= */
 @media (min-width: 768px) {
   .hero {
@@ -112,8 +121,8 @@
   }
 
   .hero__profile-img {
-    width: 170px;
-    height: 170px;
+    width: 200px;
+    height: 200px;
   }
 
   .hero__title {
@@ -122,9 +131,10 @@
 }
 
 /* =========================================
-   6. VERSION DESKTOP (Point de rupture 1280px)
+   7. VERSION DESKTOP (Point de rupture 1280px)
    ========================================= */
-@media (min-width: 1280px) {
+  @media (min-width: 1280px) {
+
   .hero {
     padding: 5rem 10rem;
   }
