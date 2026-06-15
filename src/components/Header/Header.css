@@ -121,7 +121,27 @@
 }
 
 /* =========================================
-   2. VERSION TABLETTE (Point de rupture 768px)
+   AJUSTEMENTS POUR TRÈS PETITS ÉCRANS (< 500px)
+   ========================================= */
+@media (max-width: 499px) {
+
+  .header__nav {
+    width: 180px;
+  }
+
+  .header__nav--open {
+    padding: 1.2rem 0; 
+  }
+
+
+  .header__nav a {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+}  
+
+/* =========================================
+   3. VERSION TABLETTE (Point de rupture 768px)
    ========================================= */
 @media (min-width: 768px) {
   .header {
@@ -139,7 +159,7 @@
 }
 
 /* =========================================
-   3. VERSION DESKTOP (Point de rupture 1280px)
+   4. VERSION DESKTOP (Point de rupture 1280px)
    ========================================= */
 @media (min-width: 1280px) {
   .header__menu-btn {
@@ -154,6 +174,7 @@
     background-color: transparent;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 0rem;
     padding: 0;
     flex: 1;
     padding-right: 3rem;

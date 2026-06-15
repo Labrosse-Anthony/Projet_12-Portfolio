@@ -6,7 +6,7 @@
 .projects {
   background: linear-gradient(to bottom, var(--site-bg-main) 0%, var(--site-bg-gradient-end) 100%);
   transition: background 0.3s ease;
-  padding: 2rem 1.5rem 6rem 1.5rem;
+  padding: 2rem 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,12 +15,12 @@
 
 .projects__title {
   font-family: 'Roboto Slab', serif;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.2;
   color: var(--text-primary);
   transition: color 0.3s ease;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
@@ -191,14 +191,15 @@
 
 .project-card__details-modal.is-open {
   padding: 1.5rem;
-  max-height: 300px;
+  max-height: 250px;
+  overflow-y: auto;
   margin-top: -3rem; 
 }
 
 .modal-title {
   font-family: 'Roboto Slab', serif;
   color: var(--modal-text-title);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.3;
   margin: 0 0 0.5rem 0;
@@ -207,14 +208,15 @@
 .modal-text {
   font-family: 'Poppins', sans-serif;
   color: var(--modal-text-body);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
+  white-space: pre-line;
 }
 
 /* =========================================
-   LE BOUTON FERMER DE LA MODALE
+   8. LE BOUTON FERMER DE LA MODALE
    ========================================= */
 .modal-close-btn {
   position: absolute;
@@ -236,7 +238,7 @@
 }
 
 /* =========================================
-   8. POINTS DE NAVIGATION (Dots)
+   9. POINTS DE NAVIGATION (Dots)
    ========================================= */
 .projects__dots {
   display: flex;
@@ -268,16 +270,31 @@
 }
 
 /* =========================================
-   9. RESPONSIVE 500px
+   10. RESPONSIVE 500px
    ========================================= */
 @media (min-width: 500px) {
+  .projects {
+    padding: 2rem 1.5rem 6rem 1.5rem;
+  }
+  .projects__title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
   .project-card {
     padding: 1.5rem; 
   }
+
+  .modal-title {
+    font-size: 1.05rem;
+  }
+  .modal-text {
+    font-size: 0.85rem;
+  }
+
 }
 
 /* =========================================
-   10. VERSION TABLETTE (Point de rupture 768px)
+   11. VERSION TABLETTE (Point de rupture 768px)
    ========================================= */
 @media (min-width: 768px) {
   .projects__carousel-wrapper {
@@ -285,13 +302,34 @@
     width: 70%;
   }
 
-  .project-card__title {
-    font-size: 1.4rem; 
+  .projects__title {
+    font-size: 2.2rem; 
   }
+
+  .modal-title {
+    font-size: 1.15rem;
+  }
+
+  .modal-text {
+    font-size: 0.9rem;
+  }
+
 }
 
 /* =========================================
-   11. VERSION DESKTOP (Point de rupture 1280px)
+   12. VERSION DESKTOP (Point de rupture 1280px)
    ========================================= */
 @media (min-width: 1280px) {
+  .projects__title {
+    font-size: 2.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  .modal-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
 }

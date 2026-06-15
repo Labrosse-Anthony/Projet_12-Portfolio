@@ -2,21 +2,21 @@
   {
     "id": 1,
     "title": "Print It !",
-    "description": "Un site de e-commerce pour l'impression. Catalogue de produit et commande en ligne.",
+    "description": "Un site de e-commerce pour l'impression. \n Catalogue de produit et commande en ligne. \n\n Ce dépôt contient le code du prototype du site dont l'objectif est de : \n - Ajouter un carrousel de bannières interactives. \n - Permettre le défilement dynamique d'images. \n\n Outils et langages pour la réalisation du projet : \n Le projet a été réalisé en HTML, CSS et JavaScript.",
     "image": "./img/img-print-it.webp",
     "link": "https://github.com/Labrosse-Anthony/Projet_5-Print_it"
   },
   {
     "id": 2,
     "title": "OhMyFood",
-    "description": "Réservation de menus en ligne avec animations CSS.",
+    "description": "Réservation de menus en ligne avec animations CSS. OhMyFood est une startup qui ambitionne de devenir un acteur majeur du secteur de la gastronomie. \n\n L’objectif du site est de permettre aux utilisateurs de : \n- Consulter les menus de restaurants gastronomiques. \n-Réserver une table en ligne. \n - Sélectionner leurs plats à l’avance afin de réduire leur temps d’attente sur place. \n\n Outils et languages pour la réalisation du projet : \n Le projet à été réalisé en HTML5/CSS3 ainsi que le framework front end SASS",
     "image": "./img/img-ohmyfood.webp",
     "link": "https://github.com/Labrosse-Anthony/Projet_4-Oh_My_Food"
   },
   {
     "id": 3,
     "title": "Nina Carducci",
-    "description": "Portfolio de la styliste Nina Carducci.",
+    "description": "Portfolio de la styliste Nina Carducci. Ce projet est le portfolio en ligne de Nina Carducci, une photographe basée à Bordeaux. \n\n  L'objectif du site est de présenter ses travaux tout en garantissant : \n - une accessibilité exemplaire pour tous les utilisateurs. \n - Des performances de chargement optimisées. \n - Un référencement naturel (SEO) efficace. \n\n  Fonctionnalités : \n - Galerie interactive : Navigation à travers différentes catégories (mariages, portraits, concerts). \n - Optimisation technique : Correction de bugs (débogage) et amélioration de la structure sémantique. \n - Contact : Formulaire permettant aux visiteurs de solliciter des collaborations. \n\n  Outils et langages pour la réalisation du projet \n - Le projet a été réalisé avec HTML5, CSS3, JavaScript, Bootstrap et jQuery. \n Les tests de performance ont été effectués via Lighthouse et Wave.",
     "image": "./img/img-nina-carducci.webp",
     "link": "https://github.com/Labrosse-Anthony/Projet_8-Nina_Carducci"
   }
