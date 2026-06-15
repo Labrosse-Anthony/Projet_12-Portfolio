@@ -19,6 +19,7 @@ const Hero = () => {
             <p className="hero__description">
               Passionné par le web ainsi que la programmation c'est pour cela que j'ai choisi de faire une reconversion professionnelle dans ce domaine.
             </p>
+            <p className="hero__contact-label">Contact :</p>
             <div className="hero__socials-container">
               <a href="mailto:labrosse.anthony.dev@gmail.com" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Me contacter">
                 <img src="./img/email.webp" alt="Email" className="social-icon" />
