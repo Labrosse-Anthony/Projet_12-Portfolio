@@ -16,7 +16,7 @@ const Header = ({ toggleTheme }) => {
         
         {/* 1. LE LOGO */}
         <div className="header__logo">
-            <img src="./img/logo-labrosse-anthony.webp" alt="Logo Anthony Labrosse" className="logo-img" />
+            <img src="./img/logo-labrosse-anthony.webp" alt="Logo Anthony Labrosse" className="logo-img" fetchPriority='high' />
         </div>
 
         {/* 2. LA NAVIGATION (Masquée sur mobile, centrée sur desktop) */}
