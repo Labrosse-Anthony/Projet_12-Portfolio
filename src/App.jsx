@@ -21,9 +21,11 @@ function App() {
     <div className={`app ${theme}-mode`}>
       {/* On transmet la fonction toggleTheme au Header pour qu'il la donne au logo */}
       <Header toggleTheme={toggleTheme} />
-      <Hero />
-      <Skills />
-      <Projects />
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+      </main>
       <Footer />
     </div>
   );
