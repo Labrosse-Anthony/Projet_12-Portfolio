@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import projectsData from '../../data/Projects.json';
 import './Slider.css';
 
-// EXPLICATION DE LA CONSTANTE extendedProjects :
 const extendedProjects = [
   projectsData[projectsData.length - 2], // Index 0 : Clone OhMyFood
   projectsData[projectsData.length - 1], // Index 1 : Clone Nina Carducci
@@ -12,38 +11,34 @@ const extendedProjects = [
 ];
 
 const Slider = () => {
-  // EXPLICATION DES CONSTANTES D'ÉTAT
-  const [openDetailsId, setOpenDetailsId] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(2);
-  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [openDetailsId, setOpenDetailsId] = useState(null); // 'openDetailsId' stocke l'ID du projet dont la modale de détails est actuellement ouverte (null = aucune)
+  const [currentIndex, setCurrentIndex] = useState(2);  // On commence à 2 car c'est l'index du premier VRAI projet dans 'extendedProjects'.
+  const [isTransitioning, setIsTransitioning] = useState(true); // 'isTransitioning' permet d'activer ou désactiver l'animation de glissement.
 
-  const toggleDetails = (id) => {
-    setOpenDetailsId(openDetailsId === id ? null : id);
+  // Fonction pour ouvrir ou fermer les détails d'un projet spécifique
+  const toggleDetails = (id) => { 
+    setOpenDetailsId(openDetailsId === id ? null : id); // Si la modale cliquée est déjà ouverte, on la ferme (null), sinon on l'ouvre (id)
   };
 
-  const nextSlide = () => {
-    if (currentIndex >= extendedProjects.length - 2) return; 
+  // OPTIMISATION : On fusionne nextSlide et prevSlide en une seule fonction
+  // On passe +1 pour avancer, et -1 pour reculer
+  const changeSlide = (direction) => {
+    if (direction === 1 && currentIndex >= extendedProjects.length - 2) return; // Sécurité fin
+    if (direction === -1 && currentIndex <= 1) return; // Sécurité début
+    
     setIsTransitioning(true); 
-    setCurrentIndex((prevIndex) => prevIndex + 1);
-    setOpenDetailsId(null);
+    setCurrentIndex((prevIndex) => prevIndex + direction);
+    setOpenDetailsId(null); // On ferme la modale lors du changement de slide
   };
 
-  const prevSlide = () => {
-    if (currentIndex <= 1) return; 
-    setIsTransitioning(true); 
-    setCurrentIndex((prevIndex) => prevIndex - 1);
-    setOpenDetailsId(null);
-  };
-
-  // La téléportation
-  const handleTransitionEnd = () => {
-    if (currentIndex === 1) {
-      setIsTransitioning(false); 
-      setCurrentIndex(projectsData.length + 1); 
+  const handleTransitionEnd = () => {  // La téléportation : fonction appelée automatiquement à la fin de chaque transition CSS
+    if (currentIndex === 1) { // Si on est arrivé sur le clone de la fin (qui se trouve au début visuellement) 
+      setIsTransitioning(false); // On coupe l'animation
+      setCurrentIndex(projectsData.length + 1); // et on se téléporte sur le vrai projet correspondant à la fin
     } 
-    else if (currentIndex === projectsData.length + 2) {
-      setIsTransitioning(false); 
-      setCurrentIndex(2); 
+    else if (currentIndex === projectsData.length + 2) { // Si on est arrivé sur le clone du début (qui se trouve à la fin visuellement)
+      setIsTransitioning(false);  // On coupe l'animation
+      setCurrentIndex(2); // et on se téléporte sur le vrai premier projet (Index 2)
     }
   };
 
@@ -52,7 +47,7 @@ const Slider = () => {
       <div className="projects__carousel-wrapper">
         <button 
           className="carousel-arrow arrow-left" 
-          onClick={prevSlide} 
+          onClick={() => changeSlide(-1)} 
           aria-label="Projet précédent"
         >
           &#10094;
@@ -67,15 +62,16 @@ const Slider = () => {
             }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {extendedProjects.map((project, index) => (
+            {/* OPTIMISATION : On extrait directement id, title, link, image, description */}
+            {extendedProjects.map(({ id, title, link, image, description }, index) => (
               <div 
                 className={`project-card ${index === currentIndex ? 'is-active' : 'is-inactive'} ${!isTransitioning ? 'no-transition' : ''}`} 
                 key={index}
               >
                 <div className="project-card__header">
-                  <h3 className="project-card__title">{project.title}</h3>
+                  <h3 className="project-card__title">{title}</h3>
                   <a 
-                    href={project.link} 
+                    href={link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="project-card__github-link"
@@ -87,16 +83,16 @@ const Slider = () => {
 
                 <div 
                   className="project-card__image-link" 
-                  onClick={() => toggleDetails(project.id)}
+                  onClick={() => toggleDetails(id)}
                   role="button"
                   tabIndex={0}
                 >
                   <div className="project-card__image-wrapper">
-                    <img src={project.image} alt={`Aperçu du projet ${project.title}`} />
+                    <img src={image} alt={`Aperçu du projet ${title}`} />
                   </div>
                 </div>
 
-                <div className={`project-card__details-modal ${openDetailsId === project.id ? 'is-open' : ''}`}>
+                <div className={`project-card__details-modal ${openDetailsId === id ? 'is-open' : ''}`}>
                   <button 
                     className="modal-close-btn" 
                     onClick={() => setOpenDetailsId(null)}
@@ -104,8 +100,8 @@ const Slider = () => {
                   >
                     &times;
                   </button>
-                  <h4 className="modal-title">{project.title}</h4>
-                  <p className="modal-text">{project.description}</p>
+                  <h4 className="modal-title">{title}</h4>
+                  <p className="modal-text">{description}</p>
                 </div>
               </div>
             ))}
@@ -114,7 +110,7 @@ const Slider = () => {
 
         <button 
           className="carousel-arrow arrow-right" 
-          onClick={nextSlide} 
+          onClick={() => changeSlide(1)} 
           aria-label="Projet suivant"
         >
           &#10095;

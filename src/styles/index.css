@@ -9,7 +9,6 @@ body {
   font-family: 'Roboto Slab', 'Poppins', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  /* On définit un fond sombre par défaut sur le body pour éliminer le fond blanc d'origine du navigateur */
   background-color: #020616; 
 }
 
@@ -21,7 +20,6 @@ body {
   background-color: #020616;
 }
 
-/* On applique le thème adaptatif sur .app car c'est cet élément qui porte les classes dark-mode et light-mode */
 .app {
   background-color: var(--site-bg-main);
   color: var(--text-primary);
