@@ -3,42 +3,39 @@ import projectsData from '../../data/Projects.json';
 import './Slider.css';
 
 const extendedProjects = [
-  projectsData[projectsData.length - 2], // Index 0 : Clone OhMyFood
-  projectsData[projectsData.length - 1], // Index 1 : Clone Nina Carducci
-  ...projectsData,                       // Index 2, 3, 4 : Affiche les 3 VRAIS projets
-  projectsData[0],                       // Index 5 : Clone Print It
-  projectsData[1]                        // Index 6 : Clone OhMyFood
+  projectsData[projectsData.length - 2],
+  projectsData[projectsData.length - 1],
+  ...projectsData,
+  projectsData[0],
+  projectsData[1]
 ];
 
 const Slider = () => {
-  const [openDetailsId, setOpenDetailsId] = useState(null); // 'openDetailsId' stocke l'ID du projet dont la modale de détails est actuellement ouverte (null = aucune)
-  const [currentIndex, setCurrentIndex] = useState(2);  // On commence à 2 car c'est l'index du premier VRAI projet dans 'extendedProjects'.
-  const [isTransitioning, setIsTransitioning] = useState(true); // 'isTransitioning' permet d'activer ou désactiver l'animation de glissement.
+  const [openDetailsId, setOpenDetailsId] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(2);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
-  // Fonction pour ouvrir ou fermer les détails d'un projet spécifique
   const toggleDetails = (id) => { 
-    setOpenDetailsId(openDetailsId === id ? null : id); // Si la modale cliquée est déjà ouverte, on la ferme (null), sinon on l'ouvre (id)
+    setOpenDetailsId(openDetailsId === id ? null : id);
   };
 
-  // OPTIMISATION : On fusionne nextSlide et prevSlide en une seule fonction
-  // On passe +1 pour avancer, et -1 pour reculer
   const changeSlide = (direction) => {
-    if (direction === 1 && currentIndex >= extendedProjects.length - 2) return; // Sécurité fin
-    if (direction === -1 && currentIndex <= 1) return; // Sécurité début
+    if (direction === 1 && currentIndex >= extendedProjects.length - 2) return;
+    if (direction === -1 && currentIndex <= 1) return;
     
     setIsTransitioning(true); 
     setCurrentIndex((prevIndex) => prevIndex + direction);
-    setOpenDetailsId(null); // On ferme la modale lors du changement de slide
+    setOpenDetailsId(null);
   };
 
-  const handleTransitionEnd = () => {  // La téléportation : fonction appelée automatiquement à la fin de chaque transition CSS
-    if (currentIndex === 1) { // Si on est arrivé sur le clone de la fin (qui se trouve au début visuellement) 
-      setIsTransitioning(false); // On coupe l'animation
-      setCurrentIndex(projectsData.length + 1); // et on se téléporte sur le vrai projet correspondant à la fin
+  const handleTransitionEnd = () => {
+    if (currentIndex === 1) {
+      setIsTransitioning(false);
+      setCurrentIndex(projectsData.length + 1);
     } 
-    else if (currentIndex === projectsData.length + 2) { // Si on est arrivé sur le clone du début (qui se trouve à la fin visuellement)
-      setIsTransitioning(false);  // On coupe l'animation
-      setCurrentIndex(2); // et on se téléporte sur le vrai premier projet (Index 2)
+    else if (currentIndex === projectsData.length + 2) {
+      setIsTransitioning(false);
+      setCurrentIndex(2);
     }
   };
 

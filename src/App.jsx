@@ -17,9 +17,7 @@ function App() {
   };
 
   return (
-    // 🏷️ La classe CSS change dynamiquement selon l'état du thème
     <div className={`app ${theme}-mode`}>
-      {/* On transmet la fonction toggleTheme au Header pour qu'il la donne au logo */}
       <Header toggleTheme={toggleTheme} />
       <main>
         <Hero />

@@ -4,7 +4,6 @@
    1. CONTENEUR PRINCIPAL (Mobile First)
    ========================================= */
 .footer {
-  /* Le dégradé utilise nos variables pour passer d'une ambiance sombre à claire */
   background: var(--site-bg-header-footer);
   padding: 1rem 1rem 0.5rem 1rem;
   text-align: center;
