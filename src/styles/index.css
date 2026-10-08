@@ -1,15 +1,7 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: 'Roboto Slab', 'Poppins', sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  background-color: #020616; 
 }
 
 body {
