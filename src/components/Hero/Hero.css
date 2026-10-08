@@ -102,12 +102,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: transform 0.2s ease, background-color 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.hero__socials-badge:hover {
+.hero__social-badge:hover {
   transform: scale(1.08);
 }
+
 
 .social-icon {
   width: 24px;
