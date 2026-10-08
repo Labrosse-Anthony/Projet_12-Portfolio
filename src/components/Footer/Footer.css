@@ -1,6 +1,3 @@
-/* =========================================
-   1. CONTENEUR PRINCIPAL (Mobile First)
-   ========================================= */
 .footer {
   background: var(--site-bg-header-footer);
   padding: 1rem 1rem 0.5rem 1rem;
@@ -15,9 +12,6 @@
   gap: 0.3rem;
 }
 
-/* =========================================
-   2. TYPOGRAPHIE
-   ========================================= */
 .footer__name {
   font-family: 'Roboto Slab', serif;
   color: var(--text-primary);
@@ -49,37 +43,16 @@
   transition: color 0.3s ease;
 }
 
-/* =========================================
-   3. VERSION 500px 
-   ========================================= */
 @media (min-width: 500px) {
-  .footer__name { 
-    font-size: 1.4rem; 
+  .footer__name {
+    font-size: 1.4rem;
   }
 
-  .footer__title { 
-    font-size: 1rem; 
+  .footer__title {
+    font-size: 1rem;
   }
 
-  .footer__copyright { 
-    font-size: 0.85rem; 
-  }
-}
-
-/* =========================================
-   4. VERSION TABLETTE (Point de rupture 768px)
-   ========================================= */
-@media (min-width: 768px) {
-  .skills__title { 
-    font-size: 2.2rem;
-  }
-}
-
-/* =========================================
-   5. VERSION DESKTOP (Point de rupture 1280px)
-   ========================================= */
-@media (min-width: 1280px) {
-  .skills__title { 
-    font-size: 2.5rem;
+  .footer__copyright {
+    font-size: 0.85rem;
   }
 }
