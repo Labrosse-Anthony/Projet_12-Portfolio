@@ -130,9 +130,15 @@
    ========================================= */
 .project-card__image-link {
   display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
   border-radius: 12px;
   overflow: hidden;
-  background-color: transparent; 
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -262,8 +268,31 @@
   border-radius: 10px; 
 }
 
+.carousel-arrow:focus-visible,
+.project-card__github-link:focus-visible,
+.project-card__image-link:focus-visible,
+.modal-close-btn:focus-visible,
+.dot:focus-visible {
+  outline: 3px solid var(--text-white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--bg-color-black);
+}
+
+
 /* =========================================
-   10. AJUSTEMENTS POUR TRÈS PETITS ÉCRANS (< 500px)
+   10. RÉDUCTION DES ANIMATIONS POUR LES UTILISATEURS
+   QUI ONT ACTIVÉ "RÉDUIRE LES ANIMATIONS"
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card__details-modal,
+  .project-card__image-wrapper img {
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   11. AJUSTEMENTS POUR TRÈS PETITS ÉCRANS (< 500px)
    ========================================= */
 @media (min-width: 500px) {
   .project-card__details-modal.is-open {
@@ -285,7 +314,7 @@
 }
 
 /* =========================================
-   11. VERSION TABLETTE (Point de rupture 768px)
+   12. VERSION TABLETTE (Point de rupture 768px)
    ========================================= */
 @media (min-width: 768px) {
   .project-card__details-modal.is-open {
@@ -308,7 +337,7 @@
 }
 
 /* =========================================
-   12. VERSION DESKTOP (Point de rupture 1280px)
+   13. VERSION DESKTOP (Point de rupture 1280px)
    ========================================= */
 @media (min-width: 1280px) {
   .project-card__details-modal.is-open {
