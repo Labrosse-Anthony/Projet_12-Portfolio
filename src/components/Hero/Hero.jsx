@@ -1,41 +1,75 @@
-import React from 'react';
 import './Hero.css';
+
+const iconProps = {
+  width: 18,
+  height: 18,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+  'aria-hidden': true,
+};
+
+const SOCIALS = [
+  { href: 'mailto:labrosse.anthony.dev@gmail.com', label: 'M’écrire un e-mail', icon: './img/email.webp', external: false },
+  { href: 'https://github.com/Labrosse-Anthony', label: 'Mon profil GitHub', icon: './img/logo-github.webp', external: true },
+  { href: 'https://www.linkedin.com/in/antonyla/', label: 'Mon profil LinkedIn', icon: './img/logo-linkedin.webp', external: true },
+];
 
 const Hero = () => {
   return (
     <section className="hero" id="presentation">
-      <div className="hero__container">
-        <div className="hero__top-row">
-          <div className="hero__image-wrapper">
-            <img 
-              src="./img/photo-labrosse-anthony.webp" 
-              alt="Portrait de Labrosse Anthony" 
-              className="hero__profile-img" 
-            />
+      <div className="container hero__container">
+        <div className="hero__content">
+          <p className="section-label">Intégrateur web · Drôme</p>
+
+          <h1 className="hero__title">Bonjour, je suis Anthony Labrosse.</h1>
+
+          <p className="hero__description">
+            Passionné par le web et la programmation, j’ai choisi la reconversion
+            professionnelle dans ce domaine. Je conçois des interfaces claires,
+            responsives et accessibles.
+          </p>
+
+          <div className="hero__actions">
+            <a className="btn btn--primary" href="#projets">
+              Voir mes projets
+              <svg {...iconProps}><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
+            </a>
+            <a className="btn btn--outline" href="./cv-anthony-labrosse.pdf" download>
+              Télécharger mon CV
+              <svg {...iconProps}><path d="M12 3v12M7 10l5 5 5-5M5 21h14" /></svg>
+            </a>
           </div>
-          <div className="hero__content">
-            <h1 className="hero__title">Bonjour, <br/> Je suis Anthony Labrosse.</h1>
-            <h2 className="hero__subtitle">Intégrateur web</h2>
-            <p className="hero__description">
-              Passionné par le web ainsi que la programmation c'est pour cela que j'ai choisi de faire une reconversion professionnelle dans ce domaine.
-            </p>
-            <p className="hero__contact-label">Contact :</p>
-            <div className="hero__socials-container">
-              <a href="mailto:labrosse.anthony.dev@gmail.com" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Me contacter">
-                <img src="./img/email.webp" alt="Email" className="social-icon" />
-              </a>
-              <a href="https://github.com/Labrosse-Anthony" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
-                <img src="./img/logo-github.webp" alt="GitHub" className="social-icon" />
-              </a>
-              <a href="https://www.linkedin.com/in/antonyla/" className="hero__social-badge" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
-                <img src="./img/logo-linkedin.webp" alt="LinkedIn" className="social-icon" />
-              </a>
-            </div>
-            
-          </div>
-          
+
+          <ul className="hero__socials">
+            {SOCIALS.map(({ href, label, icon, external }) => (
+              <li key={href}>
+                <a
+                  className="hero__social"
+                  href={href}
+                  aria-label={label}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  <img src={icon} alt="" width="22" height="22" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
+        <div className="hero__photo-frame">
+          <img
+            src="./img/photo-labrosse-anthony.webp"
+            alt="Portrait d’Anthony Labrosse"
+            className="hero__photo"
+            width="440"
+            height="440"
+            fetchPriority="high"
+          />
+        </div>
       </div>
     </section>
   );

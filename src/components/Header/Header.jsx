@@ -1,60 +1,92 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Header.css';
+
+const NAV_LINKS = [
+  { href: '#projets', label: 'Projets' },
+  { href: '#competences', label: 'Compétences' },
+  { href: '#apropos', label: 'À propos' },
+];
 
 const Header = ({ toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
+
+  // La touche Échap ferme le menu mobile
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setIsMenuOpen(false);
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
 
   return (
     <header className="header">
-      <div className="header__container">
-        
-        {/* 1. LE LOGO */}
-        <div className="header__logo">
-            <img src="./img/logo-labrosse-anthony.webp" alt="Logo Anthony Labrosse" className="logo-img" fetchPriority="high" width="100" height="100"/>
-        </div>
+      <div className="container header__container">
+        <a href="#presentation" className="header__brand" onClick={closeMenu}>
+          <img
+            src="./img/logo-labrosse-anthony.webp"
+            alt=""
+            className="header__logo"
+            width="36"
+            height="36"
+          />
+          <span className="header__name">Anthony Labrosse</span>
+        </a>
 
-        {/* 2. LA NAVIGATION (Masquée sur mobile, centrée sur desktop) */}
-        <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
+        <nav
+          id="menu-principal"
+          className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}
+          aria-label="Navigation principale"
+        >
           <ul className="header__nav-list">
-            <li className="header__nav-item">
-              <a href="#presentation" onClick={() => setIsMenuOpen(false)}>Présentation</a>
-            </li>
-            <li className="header__nav-item">
-              <a href="#competences" onClick={() => setIsMenuOpen(false)}>Compétences</a>
-            </li>
-            <li className="header__nav-item">
-              <a href="#projets" onClick={() => setIsMenuOpen(false)}>Projets</a>
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <a className="header__link" href={href} onClick={closeMenu}>
+                  {label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a className="btn btn--outline btn--small" href="#contact" onClick={closeMenu}>
+                Me contacter
+              </a>
             </li>
           </ul>
         </nav>
 
-        {/* 3. CONTENEUR ACTIONS (Thème + Menu) */}
         <div className="header__actions">
-          <button 
-            className="header__theme-btn" 
-            onClick={toggleTheme} 
+          <button
+            type="button"
+            className="header__icon-btn"
+            onClick={toggleTheme}
             aria-label="Changer le thème"
           >
-            <img src="./img/radio_button.svg" alt="Icône thème" className="theme-icon" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+            </svg>
           </button>
-          <button 
-            className="header__menu-btn"
-            onClick={toggleMenu}
-            aria-label="Menu de navigation"
+
+          <button
+            type="button"
+            className="header__icon-btn header__menu-btn"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-expanded={isMenuOpen}
+            aria-controls="menu-principal"
+            aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
-            <img 
-              src={isMenuOpen ? "./img/croix.webp" : "./img/menu.webp"} 
-              alt={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"} 
-              className={`menu-icon ${isMenuOpen ? 'icon-cross' : ''}`}
-            />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              {isMenuOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
           </button>
-
         </div>
-
       </div>
     </header>
   );
