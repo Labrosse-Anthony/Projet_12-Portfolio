@@ -28,5 +28,14 @@
     "description": "Portfolio de la styliste Nina Carducci. Ce projet est le portfolio en ligne de Nina Carducci, une photographe basée à Bordeaux. \n\n L'objectif du site est de présenter ses travaux tout en garantissant : \n - Une accessibilité exemplaire pour tous les utilisateurs. \n - Des performances de chargement optimisées. \n - Un référencement naturel (SEO) efficace. \n\n Fonctionnalités : \n - Galerie interactive : navigation à travers différentes catégories (mariages, portraits, concerts). \n - Optimisation technique : correction de bugs (débogage) et amélioration de la structure sémantique. \n - Contact : formulaire permettant aux visiteurs de solliciter des collaborations. \n\n Outils et langages pour la réalisation du projet : \n Le projet a été réalisé avec HTML5, CSS3, JavaScript, Bootstrap et jQuery. \n Les tests de performance ont été effectués via Lighthouse et Wave.",
     "image": "./img/img-nina-carducci.webp",
     "link": "https://github.com/Labrosse-Anthony/Projet_8-Nina_Carducci"
+  },
+  {
+    "id": 4,
+    "slug": "kasa",
+    "title": "Kasa",
+    "summary": "Site de location de logements entre particuliers.",
+    "tags": [],
+    "description": "",
+    "image": "./img/img-kasa.webp"
   }
 ]
