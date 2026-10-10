@@ -1,0 +1,46 @@
+.contact {
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.contact__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 3rem);
+  text-align: center;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+}
+
+.contact__card .section-label,
+.contact__card .section-title {
+  margin: 0;
+}
+
+.contact__text {
+  max-width: 520px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact__actions .btn {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .contact__actions,
+  .contact__actions .btn {
+    width: 100%;
+  }
+}
