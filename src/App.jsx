@@ -1,16 +1,18 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-import Projects from './components/Projects/Projects';
 import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
+import About from './components/About/About';
 import Footer from './components/Footer/Footer';
-import './styles/variables.css';
+import "./styles/variables.css";
 import './styles/index.css';
 
 function App() {
   // 'dark' pour définir le thème par défaut
   const [theme, setTheme] = useState('dark');
 
+  // Fonction pour basculer d'un thème à l'autre
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
@@ -23,6 +25,7 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
+        <About />
       </main>
       <Footer />
     </div>
