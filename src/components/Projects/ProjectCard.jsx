@@ -1,13 +1,23 @@
-const ProjectCard = ({ title, summary, tags = [], image, link, siteUrl }) => {
+import { Link } from 'react-router-dom';
+import { asset } from '../../utils/asset';
+
+const ProjectCard = ({ slug, title, summary, tags = [], image, link, siteUrl }) => {
   return (
     <article className="project-card">
-      <img
-        className="project-card__image"
-        src={image}
-        alt={`Aperçu du site ${title}`}
-        loading="lazy"
-        decoding="async"
-      />
+      <Link
+        to={`/projets/${slug}`}
+        className="project-card__image-link"
+        tabIndex={-1}
+        aria-hidden="true"
+      >
+        <img
+          className="project-card__image"
+          src={asset(image)}
+          alt={`Aperçu du site ${title}`}
+          loading="lazy"
+          decoding="async"
+        />
+      </Link>
 
       <div className="project-card__body">
         <h3 className="project-card__title">{title}</h3>
@@ -21,32 +31,39 @@ const ProjectCard = ({ title, summary, tags = [], image, link, siteUrl }) => {
           </ul>
         )}
 
-        {(siteUrl || link) && (
-          <div className="project-card__actions">
-            {siteUrl && (
-              <a
-                className="btn btn--outline"
-                href={siteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Voir le site ${title} (nouvel onglet)`}
-              >
-                Voir le site
-              </a>
-            )}
-            {link && (
-              <a
-                className="btn btn--outline"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Voir le code de ${title} sur GitHub (nouvel onglet)`}
-              >
-                Voir le code
-              </a>
-            )}
-          </div>
-        )}
+        <div className="project-card__actions">
+          <Link
+            className="btn btn--primary"
+            to={`/projets/${slug}`}
+            aria-label={`Voir le détail du projet ${title}`}
+          >
+            Voir le détail
+          </Link>
+
+          {siteUrl && (
+            <a
+              className="btn btn--outline"
+              href={siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Voir le site ${title} (nouvel onglet)`}
+            >
+              Voir le site
+            </a>
+          )}
+
+          {link && (
+            <a
+              className="btn btn--outline"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Voir le code de ${title} sur GitHub (nouvel onglet)`}
+            >
+              Voir le code
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

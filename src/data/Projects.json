@@ -5,9 +5,18 @@
     "title": "Print It !",
     "summary": "Prototype d’un site e-commerce d’impression, avec un carrousel de bannières interactif et un défilement dynamique des images.",
     "tags": ["HTML", "CSS", "JavaScript"],
-    "description": "Un site de e-commerce pour l'impression. \n Catalogue de produits et commande en ligne. \n\n Ce dépôt contient le code du prototype du site dont l'objectif est de : \n - Ajouter un carrousel de bannières interactives. \n - Permettre le défilement dynamique d'images. \n\n Outils et langages pour la réalisation du projet : \n Le projet a été réalisé en HTML, CSS et JavaScript.",
     "image": "./img/img-print-it.webp",
-    "link": "https://github.com/Labrosse-Anthony/Projet_5-Print_it"
+    "link": "https://github.com/Labrosse-Anthony/Projet_5-Print_it",
+    "type": "Projet de formation",
+    "intro": "Prototype d’un site e-commerce d’impression, avec catalogue de produits et commande en ligne. Le travail portait sur l’ajout d’un carrousel de bannières interactif et d’un défilement dynamique des images.",
+    "objectives": [
+      { "title": "Carrousel de bannières", "text": "Ajouter un carrousel de bannières interactives." },
+      { "title": "Défilement dynamique", "text": "Permettre le défilement dynamique des images." }
+    ],
+    "achievements": [
+      { "title": "Un carrousel de bannières interactif", "text": "Ajout d’un carrousel de bannières interactives sur le prototype du site." },
+      { "title": "Un défilement dynamique d’images", "text": "Mise en place du défilement dynamique des images, en HTML, CSS et JavaScript." }
+    ]
   },
   {
     "id": 2,
@@ -15,9 +24,20 @@
     "title": "OhMyFood",
     "summary": "Réservation de menus en ligne pour restaurants gastronomiques : consulter les menus, réserver une table et choisir ses plats à l’avance, avec des animations CSS.",
     "tags": ["HTML5", "CSS3", "Sass"],
-    "description": "Réservation de menus en ligne avec animations CSS. OhMyFood est une startup qui ambitionne de devenir un acteur majeur du secteur de la gastronomie. \n\n L’objectif du site est de permettre aux utilisateurs de : \n - Consulter les menus de restaurants gastronomiques. \n - Réserver une table en ligne. \n - Sélectionner leurs plats à l’avance afin de réduire leur temps d’attente sur place. \n\n Outils et langages pour la réalisation du projet : \n Le projet a été réalisé en HTML5/CSS3 ainsi que le framework front-end Sass.",
     "image": "./img/img-ohmyfood.webp",
-    "link": "https://github.com/Labrosse-Anthony/Projet_4-Oh_My_Food"
+    "link": "https://github.com/Labrosse-Anthony/Projet_4-Oh_My_Food",
+    "type": "Projet de formation",
+    "intro": "OhMyFood est une startup qui ambitionne de devenir un acteur majeur du secteur de la gastronomie. Le site permet de consulter les menus de restaurants gastronomiques, de réserver une table et de choisir ses plats à l’avance.",
+    "objectives": [
+      { "title": "Consulter les menus", "text": "Consulter les menus de restaurants gastronomiques." },
+      { "title": "Réserver en ligne", "text": "Réserver une table en ligne." },
+      { "title": "Gagner du temps", "text": "Sélectionner ses plats à l’avance afin de réduire le temps d’attente sur place." }
+    ],
+    "achievements": [
+      { "title": "Un site de réservation de menus", "text": "Consultation des menus, réservation d’une table et choix des plats à l’avance." },
+      { "title": "Des animations CSS", "text": "Des animations réalisées en CSS pour rendre la navigation plus vivante." },
+      { "title": "Une feuille de style en Sass", "text": "Projet réalisé en HTML5 et CSS3, avec le framework front-end Sass." }
+    ]
   },
   {
     "id": 3,
@@ -25,9 +45,21 @@
     "title": "Nina Carducci",
     "summary": "Portfolio d’une photographe, avec galerie interactive par catégories. Travail sur l’accessibilité, les performances et le référencement naturel.",
     "tags": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-    "description": "Portfolio de la styliste Nina Carducci. Ce projet est le portfolio en ligne de Nina Carducci, une photographe basée à Bordeaux. \n\n L'objectif du site est de présenter ses travaux tout en garantissant : \n - Une accessibilité exemplaire pour tous les utilisateurs. \n - Des performances de chargement optimisées. \n - Un référencement naturel (SEO) efficace. \n\n Fonctionnalités : \n - Galerie interactive : navigation à travers différentes catégories (mariages, portraits, concerts). \n - Optimisation technique : correction de bugs (débogage) et amélioration de la structure sémantique. \n - Contact : formulaire permettant aux visiteurs de solliciter des collaborations. \n\n Outils et langages pour la réalisation du projet : \n Le projet a été réalisé avec HTML5, CSS3, JavaScript, Bootstrap et jQuery. \n Les tests de performance ont été effectués via Lighthouse et Wave.",
     "image": "./img/img-nina-carducci.webp",
-    "link": "https://github.com/Labrosse-Anthony/Projet_8-Nina_Carducci"
+    "link": "https://github.com/Labrosse-Anthony/Projet_8-Nina_Carducci",
+    "type": "Projet de formation",
+    "intro": "Portfolio en ligne de Nina Carducci, photographe basée à Bordeaux. L’objectif : présenter ses travaux avec une accessibilité, des performances et un référencement soignés.",
+    "objectives": [
+      { "title": "Accessibilité", "text": "Une accessibilité exemplaire pour tous les utilisateurs." },
+      { "title": "Performances", "text": "Des temps de chargement optimisés." },
+      { "title": "Référencement", "text": "Un référencement naturel (SEO) efficace." }
+    ],
+    "achievements": [
+      { "title": "Une galerie interactive", "text": "Navigation à travers différentes catégories : mariages, portraits, concerts." },
+      { "title": "Débogage et structure sémantique", "text": "Correction de bugs et amélioration de la structure sémantique des pages." },
+      { "title": "Un formulaire de contact", "text": "Il permet aux visiteurs de solliciter des collaborations." }
+    ],
+    "resultsText": "Les tests de performance ont été effectués avec Lighthouse et Wave."
   },
   {
     "id": 4,
@@ -35,7 +67,8 @@
     "title": "Kasa",
     "summary": "Site de location de logements entre particuliers.",
     "tags": [],
-    "description": "",
-    "image": "./img/img-kasa.webp"
+    "image": "./img/img-kasa.webp",
+    "type": "Projet de formation",
+    "intro": "Site de location de logements entre particuliers."
   }
 ]

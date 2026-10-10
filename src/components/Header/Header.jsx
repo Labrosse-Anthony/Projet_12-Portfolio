@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { asset } from '../../utils/asset';
 import './Header.css';
 
 const NAV_LINKS = [
-  { href: '#projets', label: 'Projets' },
-  { href: '#competences', label: 'Compétences' },
-  { href: '#apropos', label: 'À propos' },
+  { to: '/#competences', label: 'Compétences' },
+  { to: '/#projets', label: 'Projets' },
+  { to: '/#apropos', label: 'À propos' },
 ];
 
 const Header = ({ toggleTheme }) => {
@@ -27,16 +29,16 @@ const Header = ({ toggleTheme }) => {
   return (
     <header className="header">
       <div className="container header__container">
-        <a href="#presentation" className="header__brand" onClick={closeMenu}>
+        <Link to="/#presentation" className="header__brand" onClick={closeMenu}>
           <img
-            src="./img/logo-labrosse-anthony.webp"
+            src={asset('img/logo-labrosse-anthony.webp')}
             alt=""
             className="header__logo"
             width="36"
             height="36"
           />
           <span className="header__name">Anthony Labrosse</span>
-        </a>
+        </Link>
 
         <nav
           id="menu-principal"
@@ -44,17 +46,17 @@ const Header = ({ toggleTheme }) => {
           aria-label="Navigation principale"
         >
           <ul className="header__nav-list">
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <a className="header__link" href={href} onClick={closeMenu}>
+            {NAV_LINKS.map(({ to, label }) => (
+              <li key={to}>
+                <Link className="header__link" to={to} onClick={closeMenu}>
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a className="btn btn--outline btn--small" href="#contact" onClick={closeMenu}>
+              <Link className="btn btn--outline btn--small" to="/#contact" onClick={closeMenu}>
                 Me contacter
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
